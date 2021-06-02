@@ -1,0 +1,22 @@
+body{
+    background-color: maroon;
+}
+p{
+    font-size: 40px;
+    margin-right: 20px;
+    font-weight: bold;
+    float: right;  
+    color: wheat;  
+}
+.egg{
+    height:50px;
+    width: 40px;
+    position: fixed;  
+}
+.basket{
+    width:100px;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
