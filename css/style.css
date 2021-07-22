@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
 body{
     background-color: maroon;
+    font-family: 'Tourney', cursive;
 }
 p{
-    font-size: 40px;
+    font-size: 30px;
     margin-right: 20px;
     font-weight: bold;
     float: right;  
@@ -19,4 +21,17 @@ p{
     position: fixed;
     bottom: 0;
     z-index: 2;
+}
+.scoreegg{
+    height:25px;
+    width:20px;
+    margin-right:10px;
+   
+}
+div{   position:absolute;
+    right:30px;
+    top:80px;
+}
+.break{
+    opacity: 0.5;
 }

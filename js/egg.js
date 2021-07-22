@@ -1,31 +1,32 @@
-
- let egg=document.querySelector('.egg');
-let pos=0;
-bottommax=window.innerHeight+50;
+let egg=document.querySelector('.egg');
+let y_position=0;
+let bottom_max=window.innerHeight+50;
 //EGG ANIMATION
-position=Math.floor(random(10,130))*10-30;
-egg.style.marginLeft=position;
+getX();
 setInterval(()=>{
-position=Math.floor(random(10,130))*10-30; 
- egg.style.marginLeft=position;
- //FUNCTION TO GEN NUMBER BETWEEN TWO NUM
+getX();
  
- }, 7200);
- function random(min, max) {
-  return min + Math.random() * (max - min);
-}
+ },bottom_max*10);
+
 setInterval(() => {
-  if(pos!==720)
+  if(y_position!==bottom_max)
   {
-  pos++; 
-  egg.style.top = pos + 'px';
+  y_position++; 
+  egg.style.top = y_position + 'px';
 
   }
-  else if(pos===720)
+  else if(y_position===bottom_max)
   {
-    pos=0;
-    
+    y_position=0;
   }
  
 }, 10);
 
+function getX(){
+  x_position=Math.floor(random(50,(window.innerWidth-150)/10))*10-30;
+  egg.style.marginLeft=x_position;
+  //FUNCTION TO GEN NUMBER BETWEEN TWO NUM
+  function random(min, max) {
+    return min + Math.random() * (max - min);
+  }
+}
