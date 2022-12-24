@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
+
+/*Global Reset*/
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*Elements CSS */
 body{
     font-family: 'Tourney', cursive;
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    /* position: absolute; */
-    /* z-index: -3; */
+    background-color: maroon;
 }
 p{
     font-size: 30px;
@@ -26,6 +28,7 @@ p{
     width: 30px;
     position: absolute;  
     z-index: -2;
+    display: none;
 }
 .basket{
     width:120px;
@@ -54,10 +57,60 @@ p{
     height: 700px;
     background-color: maroon;
     position:fixed;
-
-    /* z-index: -4; */
-
     bottom: 0;
+    border-top: 2px solid white;
+}
 
-    /* border: 5px solid black; */
+
+/*Popup*/
+.popup{
+    background-color: #ffffff;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    /* display: none;  */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.popup p{
+    font-size: 15px;
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+.popup h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.popup .go{
+	border-radius: 20px;
+    width: 200px;
+    margin-top: 100px;
+    font-family: 'Tourney';
+    height: 50px;
+    font-size: 20px;
+    background-color: maroon;
+    color: #fff;
+    outline: maroon;
+    border: none;
+    cursor: pointer;
+
+}
+
+.splash-egg{
+    position: absolute;
+    bottom: 0px;
+    height:40px;
+    left:0;
+    display: none;
+    /* width: 30px; */
 }

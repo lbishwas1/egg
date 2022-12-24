@@ -14,6 +14,25 @@
       <img class="basket" src="./img/Basket.png" alt="basket" />
       <img class="egg" src="./img/Egg.png" alt="egg" />
     </div>
+    <div class="popup">
+      <!-- <button id="close">&times;</button> -->
+      <h2>Welcome to EggGame</h2>
+      <p>
+        You need to put all eggs in basket. You have total three lives. Press
+        right key to move basket right. Press left-key to move to the left. Eggs
+        outside the basket will reduce your life by 1.
+      </p>
+      <button class="go" id="close" onclick="GreetPopup()">Let's Go</button>
+    </div>
+    <div class="popup dead" style="display: none">
+      <!-- <button id="close">&times;</button> -->
+      <h2 style="margin-top: 50px">Game OVER</h2>
+      <button class="go" id="playAgain" onclick="PlayAgain()">
+        Play again
+      </button>
+    </div>
+
+    <img src="img/egg-splasg.png" class="splash-egg" alt="" />
   </body>
   <script src="./js/egg.js"></script>
   <script src="./js/collision.js"></script>

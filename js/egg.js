@@ -3,23 +3,39 @@ let y_position=0;
 let containerHeight=700
 let containerWidth=1500
 let bottom_max=containerHeight;
+let x_position
 
 //EGG ANIMATION
 getX();
-// setInterval(()=>{
-// getX();
- 
-//  },bottom_max*10);
+
+//FUNCTION TO GENERATE NUMBER BETWEEN TWO NUMBER
+function random(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+//THIS GENERATE X-COORDINATES(EGG)
 
 function getX(){
   x_position=Math.floor(random(50,(containerWidth-150)/10))*10-30;
-  // x_position=200
   egg.style.marginLeft=x_position;
-  //FUNCTION TO GEN NUMBER BETWEEN TWO NUM
-  function random(min, max) {
-    return min + Math.random() * (max - min);
-  }
 }
+
+//Function to disappear popup
+function GreetPopup(){
+    document.querySelector(".popup").style.display = "none";
+    EggMovement()
+    document.querySelector(".egg").style.display='block'
+    var audio = new Audio('audio/start.mp3');
+    audio.play();
+
+
+}
+function PlayAgain(){
+    window.location.reload();
+
+  }
+
+
 
 function updateScore(){
 
@@ -34,7 +50,8 @@ function updateScore(){
     score.innerHTML=scores
   }
   }
-  function updateLives(){
+
+function updateLives(){
     liveEgg=document.getElementsByClassName('scoreegg')
     let live=liveEgg.length;
     console.log(live)
@@ -44,32 +61,28 @@ function updateScore(){
     }
     else if(live==1){
       liveEgg[0].parentNode.removeChild(liveEgg[0]);     
+      document.querySelector('.dead').style.display='block'
+      document.querySelector(".egg").style.display='none'
+    
 
-      // window.location.reload();
-
-      alert('Game Over')
     }
    
   }
 
- 
+function EggMovement(){ 
 setInterval(() => {
   if(y_position!==bottom_max)
   {
   y_position++; 
   egg.style.top = y_position + 'px';
-  
-// console.log()
-// console.log("x="+x_position)
-// console.log("y="+y_position)
-
   if((x_position>=marginLeft+120||marginLeft >= x_position+30) && y_position==651)
   {
-    // console.log(y_position+"y"+)
     updateLives()
+    document.querySelector(".splash-egg").style.display='block'
+    document.querySelector(".splash-egg").style.marginLeft=x_position+80
+    // var audio1 = new Audio('audio/dead.mp3');
+    // audio1.play();
     console.log(x_position+"x"+marginLeft+"margin")
-
-    // alert()
   }
 
 
@@ -93,3 +106,9 @@ setInterval(() => {
   
  
 }, 1);
+}
+
+
+
+
+
